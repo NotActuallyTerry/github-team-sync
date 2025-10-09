@@ -12,6 +12,7 @@ It supports both GitHub.com, GitHub Enterprise Server (GHES) and GitHub, but it 
 - OneLogin
 - Google Workspace
 - Keycloak
+- Authentik
 
 ## Features
 This utility provides the following functionality:
@@ -78,6 +79,9 @@ This app requires the following Azure permissions:
 If you have `ADMIN_FINE_GRAINED_AUTHZ` enabled, you only need the following permission for the user realm:
 - `view-users`
 
+#### Authentik Permissions
+Create a service account & provide it the `Can view Group` permission. Then, create an API key that's attached to that account.
+
 #### Google Workspace Permissions
 You must delegate domain-wide authority to the service account with the following scopes:
 - `https://www.googleapis.com/auth/admin.directory.group.readonly`
@@ -101,6 +105,7 @@ To get started, ensure that you are using **Python 3.9** (or update your `Pipfil
 - [ ] okta
 - [ ] onelogin
 - [ ] python-keycloak
+- [ ] authentik-client
 
 Install the required libraries.
 
@@ -204,6 +209,13 @@ KEYCLOAK_PASSWORD=ExamplePassword
 KEYCLOAK_REALM=ExampleCorp
 KEYCLOAK_ADMIN_REALM=master
 KEYCLOAK_USE_GITHUB_IDP=true
+```
+
+### Sample `.env` for Authentik
+```env
+AUTHENTIK_SERVER_URL=https://authentik.example.com
+AUTHENTIK_API_KEY=ExampleKey
+AUTHENTIK_USERNAME_ATTRIBUTE=github.username
 ```
 
 ### Sample `.env` for OneLogin

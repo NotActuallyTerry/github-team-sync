@@ -34,6 +34,8 @@ cryptography = "*"
 werkzeug = "*"
 importlib-metadata = "*"
 python-keycloak = "*"
+authentik-client = "*"
+tzdata = "*"
 
 [pipenv]
 allow_prereleases = false
