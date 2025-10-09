@@ -34,9 +34,9 @@ cryptography = "*"
 werkzeug = "*"
 importlib-metadata = "*"
 python-keycloak = "*"
-python-jose = "*"
 authentik-client = "*"
 tzdata = "*"
+python-jose = "*"
 
 [pipenv]
 allow_prereleases = false
